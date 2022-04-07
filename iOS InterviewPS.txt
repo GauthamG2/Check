@@ -1,0 +1,160 @@
+1. Reverse String
+
+
+class Solution {
+    func reverseString(_ s: inout [Character]) {
+        // return s.reverse()
+        
+        for i in 0..<s.count/2 {
+            (s[i], s[s.count-1-i]) = (s[s.count-1-i], s[i])
+        }
+    }
+}
+
+
+2. Reverse Integer
+
+
+class Solution {
+    func reverse(_ x: Int) -> Int {
+        var res = 0
+        var x = x
+        while x != 0 {
+            if res > Int(Int32.max)/10 || res < Int(Int32.min)/10 {
+                return 0
+            }
+            res = res * 10 + x % 10
+            x = x / 10
+        }
+        return res
+    }
+}
+
+
+3. First Unique Character in a String
+
+
+class Solution {
+    func firstUniqChar(_ s: String) -> Int {
+        
+        let freqMap = s.reduce(into: [Character: Int]()) { $0[$1, default: 0] += 1 }
+        
+        for (index, char) in s.enumerated() {
+            if let count = freqMap[char], count == 1 {
+                return index
+            }
+        }
+        return -1
+    }
+}
+
+
+5. Valid Anagram
+
+
+class Solution {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+         return s.sorted() == t.sorted()
+    }
+}
+
+
+6. Valid Palindrome
+
+
+class Solution {
+    func isPalindrome(_ s: String) -> Bool {
+        let chars = [Character](s.lowercased().filter { $0.isLetter || $0.isNumber}) 
+        var idxL = 0
+        var idxR = (chars.count - 1)
+        
+        while idxL < idxR {
+            if chars[idxL] != chars[idxR] {
+                return false
+            }
+            idxL += 1
+            idxR -= 1
+        }
+        return true
+    }
+}
+
+
+7. Implement strStr()
+
+
+class Solution {
+    func strStr(_ haystack: String, _ needle: String) -> Int {
+        let hChars = Array(haystack.characters), nChars = Array(needle.characters)
+        let hLen = hChars.count, nLen = nChars.count
+    
+        guard hLen >= nLen else {
+            return -1
+        }
+        guard nLen != 0 else {
+            return 0
+        }
+        
+        for i in 0...hLen - nLen {
+            if hChars[i] == nChars[0] {
+                for j in 0..<nLen {
+                    if hChars[i + j] != nChars[j] {
+                        break
+                    }
+                    if j + 1 == nLen {
+                        return i
+                    }
+                }
+            } 
+        }
+        
+        return -1
+    }
+}
+
+
+8. Longest Common Prefix
+
+
+class Solution {
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        if strs.isEmpty { return "" }
+        var common = strs[0]
+        
+        for ch in strs {
+            while !ch.hasPrefix(common) {
+                common = String(common.dropLast())
+            }
+        }
+        return common
+    }
+}1. ccc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
