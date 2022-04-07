@@ -1,0 +1,28 @@
+How would you describe the responsibilities of the position?/ senior se role here. 
+
+There are poeople working from different parts of the world in circles life, how the team structure works. how the teams work/connected ?
+
+
+
+
+
+1. Memeory leaks in ios  - *
+2. How to monitor app performance after app publish. -  * 
+3. How to reduce the app size while submmiting to app store - *
+4. iOS unit testing - * 
+5. How push notification works - *
+6. How to convert the objective c code to swift - *
+7. How to change the project architecture - *
+8. Region based functions/ Region based - * 
+9. How to handle bugs after sending to production -* 
+10. Enviromnets - Prod/Dev -*
+11. CI/CD in ios -*
+12. Core data implementation -*
+13. How to implement threading -*
+14. How to write a good code -*
+15. KVC/KVO -*
+16. Chat implementation -*
+17. IAP -*
+18. iOS Framework -*
+
+
